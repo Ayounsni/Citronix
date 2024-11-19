@@ -1,8 +1,8 @@
-package com.it.itlens.services.implementation;
+package com.it.citronix.services.implementations;
 
-import com.it.itlens.models.dtos.Pagination.PageDTO;
-import com.it.itlens.models.mappers.GenericMapper;
-import com.it.itlens.services.interfaces.IGenericService;
+import com.it.citronix.models.dtos.Pagination.PageDTO;
+import com.it.citronix.models.mappers.GenericMapper;
+import com.it.citronix.services.interfaces.IGenericService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

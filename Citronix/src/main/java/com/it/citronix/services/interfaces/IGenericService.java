@@ -1,6 +1,6 @@
-package com.it.itlens.services.interfaces;
+package com.it.citronix.services.interfaces;
 
-import com.it.itlens.models.dtos.Pagination.PageDTO;
+import com.it.citronix.models.dtos.Pagination.PageDTO;
 
 import java.util.List;
 
