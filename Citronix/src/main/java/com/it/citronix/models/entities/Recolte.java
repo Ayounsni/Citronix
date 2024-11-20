@@ -27,7 +27,7 @@ public class Recolte {
     private LocalDate dateRecolte;
 
     @NotNull
-    private Double quantiteTotal;
+    private Double quantiteTotal = 0.00;
 
     @OneToMany(mappedBy = "recolte",cascade = CascadeType.REMOVE,  fetch = FetchType.EAGER)
     private List<RecolteDetail> recolteDetails;

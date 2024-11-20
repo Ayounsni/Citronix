@@ -1,6 +1,8 @@
-package com.it.citronix.models.dtos.Ferme;
+package com.it.citronix.models.dtos.Champ;
 
 
+import com.it.citronix.models.entities.Ferme;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -12,18 +14,15 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateFermeDTO {
+public class CreateChampDTO {
 
     @NotBlank
     private String nom;
 
-    @NotBlank
-    private String localisation;
+    @NotNull
+    private Long fermeId;
 
     @NotNull
     private Double superficie;
-
-    @NotNull
-    private LocalDate dateCreation;
 
 }

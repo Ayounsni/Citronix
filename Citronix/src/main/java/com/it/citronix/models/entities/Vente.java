@@ -27,6 +27,9 @@ public class Vente {
     @NotNull
     private Double prixUnitaire;
 
+    @NotNull
+    private Double quantiteDemande;
+
     @NotBlank
     private String clientName;
 }
