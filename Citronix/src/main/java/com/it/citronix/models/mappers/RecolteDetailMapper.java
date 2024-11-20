@@ -18,9 +18,4 @@ public interface RecolteDetailMapper extends GenericMapper<RecolteDetail, Create
     @Mapping(target = "recolte", source = "id.recolteId")
     RecolteDetail toEntity(CreateRecolteDetailDTO createDTO);
 
-    @Override
-    @Mapping(target = "arbre", source = "id.arbreId")
-    @Mapping(target = "recolte", source = "id.recolteId")
-    RecolteDetail updateEntityFromDTO(UpdateRecolteDetailDTO updateRecolteDetailDTO, @MappingTarget RecolteDetail entity);
-
 }
