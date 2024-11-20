@@ -1,8 +1,8 @@
 package com.it.citronix.models.dtos.Recolte;
 
 
-import com.it.citronix.models.entities.RecolteDetail;
-import com.it.citronix.models.entities.Vente;
+import com.it.citronix.models.dtos.RecolteDetail.EmbeddableArbreDetailDTO;
+import com.it.citronix.models.dtos.Vente.EmbeddableVenteDTO;
 import com.it.citronix.models.enums.Saison;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,8 +24,8 @@ public class ResponseRecolteDTO {
 
     private Double quantiteTotal;
 
-    private List<RecolteDetail> recolteDetails;
+    private List<EmbeddableArbreDetailDTO> recolteDetails;
 
-    private List<Vente> ventes;
+    private List<EmbeddableVenteDTO> ventes;
 
 }

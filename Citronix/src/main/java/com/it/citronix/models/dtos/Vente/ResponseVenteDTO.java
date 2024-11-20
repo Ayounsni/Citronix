@@ -1,10 +1,7 @@
 package com.it.citronix.models.dtos.Vente;
 
 
-import com.it.citronix.models.enums.Saison;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.validation.constraints.NotNull;
+import com.it.citronix.models.entities.Recolte;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,11 +13,16 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class ResponseVenteDTO {
 
-    @Enumerated(EnumType.STRING)
-    @NotNull
-    private Saison saison;
+    private Integer id;
 
-    @NotNull
-    private LocalDate dateRecolte;
+    private LocalDate date;
+
+    private Recolte recolte;
+
+    private Double prixUnitaire;
+
+    private Double quantiteDemande;
+
+    private String clientName;
 
 }

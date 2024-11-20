@@ -1,7 +1,6 @@
-package com.it.citronix.models.dtos.Vente;
+package com.it.citronix.models.dtos.RecolteDetail;
 
 
-import com.it.citronix.models.entities.Recolte;
 import com.it.citronix.models.enums.Saison;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -15,16 +14,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmbeddableVenteDTO {
-
-    private Integer id;
-
-    private LocalDate date;
-
-    private Double prixUnitaire;
-
-    private Double quantiteDemande;
-
-    private String clientName;
-
+public class EmbeddableIdRecolteDetailDTO {
+    private Long arbreId;
+    private Long recolteId;
 }

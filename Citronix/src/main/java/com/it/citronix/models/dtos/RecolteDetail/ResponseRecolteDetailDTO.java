@@ -1,10 +1,13 @@
-package com.it.citronix.models.dtos.Vente;
+package com.it.citronix.models.dtos.RecolteDetail;
 
 
+import com.it.citronix.models.entities.Arbre;
 import com.it.citronix.models.entities.Recolte;
 import com.it.citronix.models.enums.Saison;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,16 +18,12 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmbeddableVenteDTO {
+public class ResponseRecolteDetailDTO {
 
-    private Integer id;
+    private Arbre arbre;
 
-    private LocalDate date;
+    private Recolte recolte;
 
-    private Double prixUnitaire;
-
-    private Double quantiteDemande;
-
-    private String clientName;
+    private Double quantiteRecolte;
 
 }
