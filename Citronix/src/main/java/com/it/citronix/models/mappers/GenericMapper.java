@@ -9,7 +9,5 @@ public interface GenericMapper<Entity, CreateDTO, UpdateDTO, ResponseDTO> {
 
     ResponseDTO toDTO(Entity entity);
 
-    List<ResponseDTO> toDTOs(List<Entity> entities);
-
     Entity updateEntityFromDTO(UpdateDTO updateDTO, @MappingTarget Entity entity);
 }
