@@ -1,11 +1,8 @@
 package com.it.citronix.models.dtos.Vente;
 
 
-import com.it.citronix.models.enums.Saison;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.it.citronix.models.entities.Recolte;
+import com.it.citronix.validation.annotations.Exists;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +16,7 @@ public class UpdateVenteDTO {
 
     private LocalDate date;
 
+    @Exists(entity = Recolte.class, message = "Cette récolte n'existe pas.")
     private Long recolteId;
 
     private Double prixUnitaire;

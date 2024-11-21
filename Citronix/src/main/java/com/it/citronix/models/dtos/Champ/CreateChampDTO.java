@@ -2,6 +2,7 @@ package com.it.citronix.models.dtos.Champ;
 
 
 import com.it.citronix.models.entities.Ferme;
+import com.it.citronix.validation.annotations.Exists;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -20,6 +21,7 @@ public class CreateChampDTO {
     private String nom;
 
     @NotNull
+    @Exists(entity = Ferme.class, message = "Cette ferme n'existe pas.")
     private Long fermeId;
 
     @NotNull

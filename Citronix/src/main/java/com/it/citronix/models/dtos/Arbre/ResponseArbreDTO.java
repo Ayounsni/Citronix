@@ -1,14 +1,8 @@
 package com.it.citronix.models.dtos.Arbre;
 
 
-import com.it.citronix.models.entities.Champ;
-import com.it.citronix.models.entities.RecolteDetail;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.it.citronix.models.dtos.Champ.EmbeddableChampDTO;
+import com.it.citronix.models.dtos.RecolteDetail.EmbeddableRecolteDetailDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,10 +17,10 @@ public class ResponseArbreDTO {
 
     private Integer id;
 
-    private Champ champ;
+    private EmbeddableChampDTO champ;
 
     private LocalDate datePlantation;
 
-    private List<RecolteDetail> recolteDetails;
+    private List<EmbeddableRecolteDetailDTO> recolteDetails;
 
 }

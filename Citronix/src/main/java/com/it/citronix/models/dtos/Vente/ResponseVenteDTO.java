@@ -1,6 +1,7 @@
 package com.it.citronix.models.dtos.Vente;
 
 
+import com.it.citronix.models.dtos.Recolte.EmbeddableRecolteDTO;
 import com.it.citronix.models.entities.Recolte;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,7 @@ public class ResponseVenteDTO {
 
     private LocalDate date;
 
-    private Recolte recolte;
+    private EmbeddableRecolteDTO recolte;
 
     private Double prixUnitaire;
 

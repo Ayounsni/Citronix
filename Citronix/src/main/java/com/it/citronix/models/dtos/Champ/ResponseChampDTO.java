@@ -2,6 +2,7 @@ package com.it.citronix.models.dtos.Champ;
 
 
 import com.it.citronix.models.dtos.Arbre.EmbeddableArbreDTO;
+import com.it.citronix.models.dtos.Ferme.EmbeddableFermeDTO;
 import com.it.citronix.models.entities.Ferme;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,7 @@ public class ResponseChampDTO {
 
     private String nom;
 
-    private Ferme ferme;
+    private EmbeddableFermeDTO ferme;
 
     private Double superficie;
 
