@@ -3,6 +3,7 @@ package com.it.citronix.services.implementations;
 import com.it.citronix.models.dtos.Pagination.PageDTO;
 import com.it.citronix.models.mappers.GenericMapper;
 import com.it.citronix.services.interfaces.IGenericService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -10,15 +11,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 public class GenericService<Entity, CreateDTO, UpdateDTO, ResponseDTO> implements IGenericService<CreateDTO, UpdateDTO, ResponseDTO> {
 
     protected final JpaRepository<Entity, Long> repository;
     protected final GenericMapper<Entity, CreateDTO, UpdateDTO, ResponseDTO> mapper;
-
-    public GenericService(JpaRepository<Entity, Long> repository, GenericMapper<Entity, CreateDTO,UpdateDTO, ResponseDTO> mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
-    }
 
     @Override
     public ResponseDTO create(CreateDTO createDTO) {

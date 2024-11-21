@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChampRepository extends JpaRepository<Champ, Long> {
+
+    Long countByFermeId(Integer fermeId);
 }

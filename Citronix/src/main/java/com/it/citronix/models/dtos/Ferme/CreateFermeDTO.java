@@ -1,6 +1,9 @@
 package com.it.citronix.models.dtos.Ferme;
 
 
+import com.it.citronix.models.entities.Ferme;
+import com.it.citronix.validation.annotations.Unique;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -15,12 +18,14 @@ import java.time.LocalDate;
 public class CreateFermeDTO {
 
     @NotBlank
+    @Unique(entity = Ferme.class, field = "nom")
     private String nom;
 
     @NotBlank
     private String localisation;
 
     @NotNull
+    @DecimalMin(value = "2000.0", message = "La superficie doit être supérieure à 2000 m².")
     private Double superficie;
 
     @NotNull
