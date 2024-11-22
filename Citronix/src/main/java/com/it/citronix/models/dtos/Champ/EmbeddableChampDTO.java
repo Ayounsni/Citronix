@@ -17,8 +17,6 @@ public class EmbeddableChampDTO {
 
     private Integer id;
 
-    private String nom;
-
     private Double superficie;
 
 }

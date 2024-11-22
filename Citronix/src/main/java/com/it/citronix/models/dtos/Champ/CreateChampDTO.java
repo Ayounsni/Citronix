@@ -20,10 +20,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class CreateChampDTO {
 
-    @NotBlank
-    @Unique(entity = Champ.class, field = "nom")
-    private String nom;
-
     @NotNull
     @Exists(entity = Ferme.class, message = "Cette ferme n'existe pas.")
     private Long fermeId;

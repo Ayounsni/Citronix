@@ -17,8 +17,6 @@ public class ResponseChampDTO {
 
     private Integer id;
 
-    private String nom;
-
     private EmbeddableFermeDTO ferme;
 
     private Double superficie;

@@ -1,5 +1,6 @@
 package com.it.citronix.models.entities;
 
+import com.it.citronix.validation.annotations.Unique;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,9 +18,6 @@ public class Champ {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @NotBlank
-    private String nom;
 
     @ManyToOne
     private Ferme ferme;

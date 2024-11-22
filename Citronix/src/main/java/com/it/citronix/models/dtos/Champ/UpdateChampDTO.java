@@ -19,12 +19,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class UpdateChampDTO {
 
-    @Unique(entity = Champ.class, field = "nom")
-    private String nom;
-
+    @NotNull
     @Exists(entity = Ferme.class, message = "Cette ferme n'existe pas.")
     private Long fermeId;
 
+    @NotNull
     @DecimalMin(value = "1000.0", message = "La superficie doit être supérieure à 1000 m².")
     private Double superficie;
 
