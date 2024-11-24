@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class EmbeddableArbreDTO {
 
-    private Integer id;
+    private Long id;
 
     private LocalDate datePlantation;
 

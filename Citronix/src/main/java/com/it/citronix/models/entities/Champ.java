@@ -17,7 +17,7 @@ public class Champ {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     private Ferme ferme;

@@ -16,7 +16,7 @@ public class Vente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotNull
     private LocalDate date;

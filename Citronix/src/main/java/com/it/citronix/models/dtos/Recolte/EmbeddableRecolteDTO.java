@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class EmbeddableRecolteDTO {
 
-    private Integer id;
+    private Long id;
 
     private Saison saison;
 

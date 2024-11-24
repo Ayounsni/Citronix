@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ArbreRepository extends JpaRepository<Arbre, Long> {
 
-    Long countByChampId(Integer fermeId);
+    Long countByChampId(Long fermeId);
 }

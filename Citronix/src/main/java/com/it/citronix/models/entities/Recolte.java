@@ -29,6 +29,9 @@ public class Recolte {
     @NotNull
     private Double quantiteTotal = 0.00;
 
+    @NotNull
+    private Double quantiteRestante = 0.00;
+
     @OneToMany(mappedBy = "recolte",cascade = CascadeType.REMOVE,  fetch = FetchType.EAGER)
     private List<RecolteDetail> recolteDetails;
 

@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ResponseChampDTO {
 
-    private Integer id;
+    private Long id;
 
     private EmbeddableFermeDTO ferme;
 

@@ -15,12 +15,16 @@ import java.util.List;
 @AllArgsConstructor
 public class ResponseArbreDTO {
 
-    private Integer id;
+    private Long id;
 
     private EmbeddableChampDTO champ;
 
     private LocalDate datePlantation;
 
     private List<EmbeddableRecolteDetailDTO> recolteDetails;
+
+    private String age;
+
+    private double esmtimationProductiviteAnnuel;
 
 }

@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ResponseFermeDTO {
 
-    private Integer id;
+    private Long id;
 
     private String nom;
 

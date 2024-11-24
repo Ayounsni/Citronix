@@ -16,13 +16,15 @@ import java.util.List;
 @AllArgsConstructor
 public class ResponseRecolteDTO {
 
-    private Integer id;
+    private Long id;
 
     private Saison saison;
 
     private LocalDate dateRecolte;
 
     private Double quantiteTotal;
+
+    private Double quantiteRestante;
 
     private List<EmbeddableArbreDetailDTO> recolteDetails;
 

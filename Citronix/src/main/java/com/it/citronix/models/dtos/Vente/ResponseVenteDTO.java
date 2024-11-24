@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class ResponseVenteDTO {
 
-    private Integer id;
+    private Long id;
 
     private LocalDate date;
 

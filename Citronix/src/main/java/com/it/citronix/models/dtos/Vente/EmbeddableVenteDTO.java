@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class EmbeddableVenteDTO {
 
-    private Integer id;
+    private Long id;
 
     private LocalDate date;
 

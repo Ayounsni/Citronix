@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class EmbeddableChampDTO {
 
-    private Integer id;
+    private Long id;
 
     private Double superficie;
 

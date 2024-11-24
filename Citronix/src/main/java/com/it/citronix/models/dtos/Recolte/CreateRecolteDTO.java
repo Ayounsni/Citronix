@@ -16,10 +16,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class CreateRecolteDTO {
 
-    @Enumerated(EnumType.STRING)
-    @NotNull
-    private Saison saison;
-
     @NotNull
     private LocalDate dateRecolte;
 

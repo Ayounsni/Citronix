@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmbeddableFermeDTO {
-    private Integer id;
+    private Long id;
 
     private String nom;
 

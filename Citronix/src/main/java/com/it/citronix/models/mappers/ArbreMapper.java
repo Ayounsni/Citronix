@@ -9,10 +9,7 @@ import com.it.citronix.models.entities.Arbre;
 import com.it.citronix.models.entities.Arbre;
 import com.it.citronix.models.mappers.helpers.ChampMapperHelper;
 import com.it.citronix.models.mappers.helpers.FermeMapperHelper;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring",uses = {ChampMapperHelper.class}, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface ArbreMapper extends GenericMapper<Arbre, CreateArbreDTO, UpdateArbreDTO, ResponseArbreDTO> {
@@ -24,5 +21,14 @@ public interface ArbreMapper extends GenericMapper<Arbre, CreateArbreDTO, Update
     @Override
     @Mapping(target = "champ", source = "champId")
     Arbre updateEntityFromDTO(UpdateArbreDTO updateArbreDTO, @MappingTarget Arbre entity);
+
+    @AfterMapping
+    default void enrichirDTO(@MappingTarget ResponseArbreDTO response, Arbre arbre) {
+        String age = arbre.calculerAge();
+        response.setAge(age);
+
+        double productiviteAnnuelle = arbre.calculerProductiviteAnnuel();
+        response.setEsmtimationProductiviteAnnuel(productiviteAnnuelle);
+    }
 
 }

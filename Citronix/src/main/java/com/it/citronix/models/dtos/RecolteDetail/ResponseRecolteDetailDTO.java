@@ -1,6 +1,8 @@
 package com.it.citronix.models.dtos.RecolteDetail;
 
 
+import com.it.citronix.models.dtos.Arbre.EmbeddableArbreDTO;
+import com.it.citronix.models.dtos.Recolte.EmbeddableRecolteDTO;
 import com.it.citronix.models.entities.Arbre;
 import com.it.citronix.models.entities.Recolte;
 import com.it.citronix.models.enums.Saison;
@@ -20,9 +22,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class ResponseRecolteDetailDTO {
 
-    private Arbre arbre;
+    private EmbeddableArbreDTO arbre;
 
-    private Recolte recolte;
+    private EmbeddableRecolteDTO recolte;
 
     private Double quantiteRecolte;
 
