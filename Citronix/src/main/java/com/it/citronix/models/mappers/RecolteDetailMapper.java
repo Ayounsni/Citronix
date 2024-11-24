@@ -14,8 +14,8 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 @Mapper(componentModel = "spring",uses = {RecolteMapperHelper.class , ArbreMapperHelper.class}, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface RecolteDetailMapper extends GenericMapper<RecolteDetail, CreateRecolteDetailDTO, UpdateRecolteDetailDTO, ResponseRecolteDetailDTO> {
     @Override
-    @Mapping(target = "arbre", source = "arbreId")
-    @Mapping(target = "recolte", source = "recolteId")
+    @Mapping(target = "arbre", source = "id.arbreId")
+    @Mapping(target = "recolte", source = "id.recolteId")
     RecolteDetail toEntity(CreateRecolteDetailDTO createDTO);
 
 

@@ -32,13 +32,13 @@ public class RecolteDetailService implements IRecolteDetailService {
     public ResponseRecolteDetailDTO create(CreateRecolteDetailDTO createRecolteDetailDTO) {
 //        Arbre arbre = arbreRepository.findById(createRecolteDetailDTO.getId().getArbreId())
 //                .orElseThrow(() -> new IllegalArgumentException("L'arbre spécifié n'existe pas."));
-//
-//        Recolte recolte = recolteRepository.findById(createRecolteDetailDTO.getId().getRecolteId())
-//               .orElseThrow(() -> new IllegalArgumentException("Le récolte spécifié n'existe pas."));
-//       Saison saison = recolte.getSaison();
-//       int annee = recolte.getDateRecolte().getYear();
-//       Long arbreId = createRecolteDetailDTO.getId().getArbreId();
-//       validateRecolteDetailForArbre(arbreId, saison, annee);
+
+        Recolte recolte = recolteRepository.findById(createRecolteDetailDTO.getId().getRecolteId())
+               .orElseThrow(() -> new IllegalArgumentException("Le récolte spécifié n'existe pas."));
+       Saison saison = recolte.getSaison();
+       int annee = recolte.getDateRecolte().getYear();
+       Long arbreId = createRecolteDetailDTO.getId().getArbreId();
+       validateRecolteDetailForArbre(arbreId, saison, annee);
 
         RecolteDetail recolteDetail = recolteDetailMapper.toEntity(createRecolteDetailDTO);
         RecolteDetail savedRecolteDetail = recolteDetailRepository.save(recolteDetail);
@@ -48,20 +48,20 @@ public class RecolteDetailService implements IRecolteDetailService {
 
 
 
-//    public void validateRecolteDetailForArbre(Long arbreId, Saison saison, int annee) {
-//        List<RecolteDetail> recolteDetails = recolteDetailRepository.findByArbreId(arbreId);
-//
-//        // Filtrer et comparer avec la saison et l'année
-//        boolean exists = recolteDetails.stream()
-//                .anyMatch(detail ->
-//                        detail.getRecolte().getSaison() == saison &&
-//                                detail.getRecolte().getDateRecolte().getYear() == annee
-//                );
-//
-//        if (exists) {
-//            throw new IllegalArgumentException("L'arbre a déjà été récolté pour cette saison et cette année.");
-//        }
-//    }
+    public void validateRecolteDetailForArbre(Long arbreId, Saison saison, int annee) {
+        List<RecolteDetail> recolteDetails = recolteDetailRepository.findByArbreId(arbreId);
+
+        // Filtrer et comparer avec la saison et l'année
+        boolean exists = recolteDetails.stream()
+                .anyMatch(detail ->
+                        detail.getRecolte().getSaison() == saison &&
+                                detail.getRecolte().getDateRecolte().getYear() == annee
+                );
+
+        if (exists) {
+            throw new IllegalArgumentException("L'arbre a déjà été récolté pour cette saison et cette année.");
+        }
+    }
 
 
 

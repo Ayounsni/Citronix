@@ -18,9 +18,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class CreateRecolteDetailDTO {
 
-    private Long arbreId;
-
-    private Long recolteId;
+    @NotNull
+    private EmbeddableIdRecolteDetailDTO id;
 
     @NotNull
     @Min(0)

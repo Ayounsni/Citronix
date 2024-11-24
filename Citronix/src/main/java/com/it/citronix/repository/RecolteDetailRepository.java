@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface RecolteDetailRepository extends JpaRepository<RecolteDetail, RecolteDetailId> {
 
-//    List<RecolteDetail> findByArbreId(Long arbre_id);
+    List<RecolteDetail> findByArbreId(Long arbre_id);
 
 }
