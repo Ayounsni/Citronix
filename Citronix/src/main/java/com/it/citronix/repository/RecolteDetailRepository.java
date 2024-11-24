@@ -13,4 +13,6 @@ public interface RecolteDetailRepository extends JpaRepository<RecolteDetail, Re
 
     List<RecolteDetail> findByArbreId(Long arbre_id);
 
+
+
 }

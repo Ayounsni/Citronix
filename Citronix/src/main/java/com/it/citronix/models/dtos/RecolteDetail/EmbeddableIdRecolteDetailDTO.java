@@ -19,9 +19,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmbeddableIdRecolteDetailDTO {
-    @Exists(entity = Arbre.class, message = "Cette arbre n'existe pas.")
     private Long arbreId;
 
-    @Exists(entity = Recolte.class, message = "Cette récolte n'existe pas.")
     private Long recolteId;
 }
