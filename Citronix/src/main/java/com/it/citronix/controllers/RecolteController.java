@@ -6,6 +6,7 @@ import com.it.citronix.models.dtos.Recolte.UpdateRecolteDTO;
 import com.it.citronix.models.dtos.Pagination.PageDTO;
 import com.it.citronix.models.entities.Recolte;
 import com.it.citronix.services.implementations.RecolteService;
+import com.it.citronix.services.interfaces.IRecolteService;
 import com.it.citronix.validation.annotations.Exists;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/recolte")
 public class RecolteController {
     @Autowired
-    private RecolteService recolteService;
+    private IRecolteService recolteService;
 
     @PostMapping
     public ResponseEntity<ResponseRecolteDTO> createRecolte(@Valid @RequestBody CreateRecolteDTO createRecolteDTO) {

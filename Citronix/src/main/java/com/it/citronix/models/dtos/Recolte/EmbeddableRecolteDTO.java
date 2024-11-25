@@ -1,6 +1,5 @@
 package com.it.citronix.models.dtos.Recolte;
 
-
 import com.it.citronix.models.enums.Saison;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,5 +19,7 @@ public class EmbeddableRecolteDTO {
     private LocalDate dateRecolte;
 
     private Double quantiteTotal;
+
+    private Double quantiteRestante;
 
 }

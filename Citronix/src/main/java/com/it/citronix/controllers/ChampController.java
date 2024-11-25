@@ -6,6 +6,7 @@ import com.it.citronix.models.dtos.Champ.UpdateChampDTO;
 import com.it.citronix.models.dtos.Pagination.PageDTO;
 import com.it.citronix.models.entities.Champ;
 import com.it.citronix.services.implementations.ChampService;
+import com.it.citronix.services.interfaces.IChampService;
 import com.it.citronix.validation.annotations.Exists;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/champ")
 public class ChampController {
     @Autowired
-    private ChampService champService;
+    private IChampService champService;
 
     @PostMapping
     public ResponseEntity<ResponseChampDTO> createChamp(@Valid @RequestBody CreateChampDTO createChampDTO) {

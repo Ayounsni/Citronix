@@ -55,7 +55,6 @@ public class ChampService extends GenericService<Champ, CreateChampDTO, UpdateCh
         return mapper.toDTO(updatedEntity);
     }
 
-
     private void validateChamp(Long fermeId, double superficie) {
         Ferme ferme = fermeRepository.findById(fermeId)
                 .orElseThrow();
@@ -75,6 +74,5 @@ public class ChampService extends GenericService<Champ, CreateChampDTO, UpdateCh
             throw new IllegalStateException("Un champ ne peut pas dépasser 50% de la superficie totale de la ferme. Le maximum autorisé pour le champ est de " + superficieMaximaleParChamp + " m².");
         }
     }
-
 
 }

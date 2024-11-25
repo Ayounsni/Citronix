@@ -6,6 +6,7 @@ import com.it.citronix.models.dtos.Vente.UpdateVenteDTO;
 import com.it.citronix.models.dtos.Pagination.PageDTO;
 import com.it.citronix.models.entities.Vente;
 import com.it.citronix.services.implementations.VenteService;
+import com.it.citronix.services.interfaces.IVenteService;
 import com.it.citronix.validation.annotations.Exists;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/vente")
 public class VenteController {
     @Autowired
-    private VenteService venteService;
+    private IVenteService venteService;
 
     @PostMapping
     public ResponseEntity<ResponseVenteDTO> createVente(@Valid @RequestBody CreateVenteDTO createVenteDTO) {

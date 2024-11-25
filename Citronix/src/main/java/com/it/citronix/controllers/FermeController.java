@@ -6,6 +6,7 @@ import com.it.citronix.models.dtos.Ferme.UpdateFermeDTO;
 import com.it.citronix.models.dtos.Pagination.PageDTO;
 import com.it.citronix.models.entities.Ferme;
 import com.it.citronix.services.implementations.FermeService;
+import com.it.citronix.services.interfaces.IFermeService;
 import com.it.citronix.validation.annotations.Exists;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import java.util.List;
 @RequestMapping("/api/ferme")
 public class FermeController {
     @Autowired
-    private FermeService fermeService;
+    private IFermeService fermeService;
 
     @PostMapping
     public ResponseEntity<ResponseFermeDTO> createFerme(@Valid @RequestBody CreateFermeDTO createFermeDTO) {

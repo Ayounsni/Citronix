@@ -6,6 +6,7 @@ import com.it.citronix.models.dtos.Arbre.UpdateArbreDTO;
 import com.it.citronix.models.dtos.Pagination.PageDTO;
 import com.it.citronix.models.entities.Arbre;
 import com.it.citronix.services.implementations.ArbreService;
+import com.it.citronix.services.interfaces.IArbreService;
 import com.it.citronix.validation.annotations.Exists;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/arbre")
 public class ArbreController {
     @Autowired
-    private ArbreService arbreService;
+    private IArbreService arbreService;
 
     @PostMapping
     public ResponseEntity<ResponseArbreDTO> createArbre(@Valid @RequestBody CreateArbreDTO createArbreDTO) {
