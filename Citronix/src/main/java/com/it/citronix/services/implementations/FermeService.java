@@ -8,6 +8,7 @@ import com.it.citronix.models.dtos.Ferme.UpdateFermeDTO;
 import com.it.citronix.models.entities.Ferme;
 import com.it.citronix.models.mappers.FermeMapper;
 import com.it.citronix.repository.FermeRepository;
+import com.it.citronix.repository.Specifications.FermeSpecification;
 import com.it.citronix.services.interfaces.IFermeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,12 +29,9 @@ public class FermeService extends GenericService<Ferme, CreateFermeDTO, UpdateFe
         super(fermeRepository, fermeMapper);
     }
 
-    public List<ResponseFermeDTO> rechercherFermes(SearchFermeDTO searchCriteria) {
-        List<Ferme> fermes = fermeRepository.findByNomContainingIgnoreCaseAndLocalisationContainingIgnoreCaseAndDateCreation(
-                searchCriteria.getNom() != null ? searchCriteria.getNom() : "",
-                searchCriteria.getLocalisation() != null ? searchCriteria.getLocalisation() : "",
-                searchCriteria.getDateCreation() != null ? searchCriteria.getDateCreation() : ""
-        );
+    @Override
+    public List<ResponseFermeDTO> rechercherFermes(String nom, String localisation) {
+        List<Ferme> fermes = fermeRepository.findAll(FermeSpecification.searchFermes(nom, localisation));
 
         return fermes.stream()
                 .map(fermeMapper::toDTO)

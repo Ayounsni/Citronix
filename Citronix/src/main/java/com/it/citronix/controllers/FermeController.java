@@ -2,6 +2,7 @@ package com.it.citronix.controllers;
 
 import com.it.citronix.models.dtos.Ferme.CreateFermeDTO;
 import com.it.citronix.models.dtos.Ferme.ResponseFermeDTO;
+import com.it.citronix.models.dtos.Ferme.SearchFermeDTO;
 import com.it.citronix.models.dtos.Ferme.UpdateFermeDTO;
 import com.it.citronix.models.dtos.Pagination.PageDTO;
 import com.it.citronix.models.entities.Ferme;
@@ -28,6 +29,17 @@ public class FermeController {
     public ResponseEntity<ResponseFermeDTO> createFerme(@Valid @RequestBody CreateFermeDTO createFermeDTO) {
         ResponseFermeDTO ferme = fermeService.create(createFermeDTO);
         return new ResponseEntity<>(ferme, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/search")
+    public ResponseEntity<List<ResponseFermeDTO>> rechercherFermes(
+            @RequestParam(required = false) String nom,
+            @RequestParam(required = false) String localisation) {
+
+        List<ResponseFermeDTO> fermes = fermeService.rechercherFermes(nom, localisation);
+
+        return new ResponseEntity<>(fermes, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
