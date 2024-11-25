@@ -26,4 +26,6 @@ public class ResponseVenteDTO {
 
     private String clientName;
 
+    private Double revenue;
+
 }

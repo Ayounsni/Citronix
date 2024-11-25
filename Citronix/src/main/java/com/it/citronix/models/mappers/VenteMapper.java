@@ -1,14 +1,13 @@
 package com.it.citronix.models.mappers;
 
+import com.it.citronix.models.dtos.Arbre.ResponseArbreDTO;
 import com.it.citronix.models.dtos.Vente.CreateVenteDTO;
 import com.it.citronix.models.dtos.Vente.UpdateVenteDTO;
 import com.it.citronix.models.dtos.Vente.ResponseVenteDTO;
+import com.it.citronix.models.entities.Arbre;
 import com.it.citronix.models.entities.Vente;
 import com.it.citronix.models.mappers.helpers.RecolteMapperHelper;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring",uses = {RecolteMapperHelper.class}, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface VenteMapper extends GenericMapper<Vente, CreateVenteDTO, UpdateVenteDTO, ResponseVenteDTO> {
@@ -19,5 +18,11 @@ public interface VenteMapper extends GenericMapper<Vente, CreateVenteDTO, Update
     @Override
     @Mapping(target = "recolte", source = "recolteId")
     Vente updateEntityFromDTO(UpdateVenteDTO updateVenteDTO, @MappingTarget Vente entity);
+
+    @AfterMapping
+    default void enrichirDTO(@MappingTarget ResponseVenteDTO response, Vente vente) {
+        Double revenue = vente.getQuantiteDemande() * vente.getPrixUnitaire();
+        response.setRevenue(revenue);
+    }
 
 }
