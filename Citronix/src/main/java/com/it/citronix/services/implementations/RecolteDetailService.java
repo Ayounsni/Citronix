@@ -74,7 +74,7 @@ public class RecolteDetailService implements IRecolteDetailService {
                 .orElseThrow(() -> new IllegalArgumentException("RécolteDetail avec récolte ID " + recolteId + " et arbre ID " + arbreId + " n'existe pas."));
 
         if (recolte.getVentes() != null && !recolte.getVentes().isEmpty()) {
-            throw new IllegalStateException("Vous ne pouvez pas supprimer cette RécolteDetail car une vente est déjà commencée.");
+            throw new IllegalStateException("Vous ne pouvez pas supprimer cette RécolteDetail car la vente est déjà commencée.");
         }
 
         double quantiteTotal = recolte.getQuantiteTotal() - recolteDetail.getQuantiteRecolte();
